@@ -1,171 +1,254 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="gb2312">
-	<title>Queue</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="jquery.mobile-1.3.2.min.css">
-	<link rel="stylesheet" href="Queue.css">
-	<script src="jquery-1.11.1.min.js"></script>
-	<script src="jquery.mobile-1.3.2.min.js"></script>
-	<script src="Queue.js"></script>
-	<style>
-		.ui-block-a, .ui-block-b		
-		{
-			height: 60px;
-			padding: 20px;
-			font-weight: bold;
-			text-align: center;
-		}
-		
-		.ui-block-a
-		{
-			border-right: 1px solid black;
-		}
-		
-		.ui-block-b
-		{
-			border-left: 1px solid black;
-		}
-	</style>
-</head>
-<body>
-	<div data-role="page" id="page1">
-		<div data-role="content">
-			<div id="appNameField" align="center">
-				<p class="appName" style="font-size: 30px; margin-top: 10px; margin-bottom: 0;">不用再等待</p>
-			</div>
-			
-			<div id="loginField" align="center">		
-				<form method="get" action="#">
-					<div data-role="fieldcontain" style="margin: 0;">
-						<table>
-							<tr style="height: 60px;">
-								<td>
-									<label for="userName" class="ui-input-text" style="width: 3em;">帐号:</label>
-								</td>
-								<td>
-									<input type="text" name="userName" id="userName">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="userPassword" class="ui-input-text" style="width: 3em;">密码:</label>
-								</td>
-								<td>
-									<input type="text" name="userPassword" id="userPassword">
-								</td>
-							</tr>
-						</table>
-					</div>
-				</form>
-				<a data-role="button" href="#page2" id="loginButton" data-inline="true">登陆</a>
-				<a data-role="button" href="#" id="exitButton" data-inline="true">退出</a>
-			</div>
-			
-			<div id="logoField" align="center">
-				<img src="http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif" alt="Logo">
-			</div>
-		</div>
-	</div>
-	
-	<div data-role="page" id="page2">
-		<div data-role="header" data-position="fixed">
-			<a href="#page1" data-role="button"><img src="http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif" alt="Logo" width="30px" height="30px"></a>
-			<h1>姓名: 罗俊炜</h1>
-			<a href="#page1" data-role="button">注销</a>
-		</div>
-		
-		<div data-role="content">
-			<div class="ui-grid-a">
-				<div class="ui-block-a" style="background-color: lightgray;">挂号科室</div>
-				<div class="ui-block-b" style="background-color: lightgray;">等待人数</div>
-				<div class="ui-block-a">耳鼻喉科</div>
-				<div class="ui-block-b">
-					17人
-					<a href="#page3" style="float: right;">详情</a>
-				</div>
-				<div class="ui-block-a" style="background-color: #EEEEEE;">妇科</div>
-				<div class="ui-block-b" style="background-color: #EEEEEE;">
-					23人
-					<a href="#page4" style="float: right;">详情</a>
-				</div>
-				<div class="ui-block-a"></div>
-				<div class="ui-block-b"></div>
-				<div class="ui-block-a" style="background-color: #EEEEEE;"></div>
-				<div class="ui-block-b" style="background-color: #EEEEEE;"></div>
-				<div class="ui-block-a"></div>
-				<div class="ui-block-b"></div>
-			</div>
-		</div>
-	</div>
-		
-	<div data-role="page" id="page3">
-		<div data-role="header" data-position="fixed">
-			<a href="#page1" data-role="button"><img src="http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif" alt="Logo" width="30px" height="30px"></a>
-			<h1>姓名: 罗俊炜</h1>
-			<a href="#page1" data-role="button">注销</a>
-		</div>
-	
-		<div data-role="content">
-			<div class="departmentName" align="center">
-				<h1 style="border: 2px solid black; border-radius: 20px; padding: 5px; display: inline-block;">耳鼻喉科</h1>
-			</div>
-			<div class="ui-grid-a">
-				<div class="ui-block-a" style="background-color: lightgray;">诊室</div>
-				<div class="ui-block-b" style="background-color: lightgray;">2号</div>
-				<div class="ui-block-a">就诊医师</div>
-				<div class="ui-block-b">王医生</div>
-				<div class="ui-block-a" style="background-color: #EEEEEE;">您的诊号</div>
-				<div class="ui-block-b" style="background-color: #EEEEEE;">19</div>
-				<div class="ui-block-a">正在就诊</div>
-				<div class="ui-block-b">2</div>
-			</div>
-			<div class="peopleInFront" align="center">
-				<p style="font-size: 1.5em; font-weight: bold;">您前面还有17人</p>
-			</div>
-			<div align="center">
-				<img src="http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif" alt="Logo">
-			</div>
-		</div>
-		
-		<div data-role="footer" data-position="fixed">
-			<a href="#page2" data-role="button">返回</a>
-		</div>
-	</div>
-		
-	<div data-role="page" id="page4">
-		<div data-role="header" data-position="fixed">
-			<a href="#page1" data-role="button"><img src="http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif" alt="Logo" width="30px" height="30px"></a>
-			<h1>姓名: 罗俊炜</h1>
-			<a href="#page1" data-role="button">注销</a>
-		</div>
-	
-		<div data-role="content">
-			<div class="departmentName" align="center">
-				<h1 style="border: 2px solid black; border-radius: 20px; padding: 5px; display: inline-block;">妇科</h1>
-			</div>
-			<div class="ui-grid-a">
-				<div class="ui-block-a" style="background-color: lightgray;">诊室</div>
-				<div class="ui-block-b" style="background-color: lightgray;">6号</div>
-				<div class="ui-block-a">就诊医师</div>
-				<div class="ui-block-b">李医生</div>
-				<div class="ui-block-a" style="background-color: #EEEEEE;">您的诊号</div>
-				<div class="ui-block-b" style="background-color: #EEEEEE;">35</div>
-				<div class="ui-block-a">正在就诊</div>
-				<div class="ui-block-b">12</div>
-			</div>
-			<div class="peopleInFront" align="center">
-				<p style="font-size: 1.5em; font-weight: bold;">您前面还有23人</p>
-			</div>
-			<div align="center">
-				<img src="http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif" alt="Logo">
-			</div>
-		</div>
-		
-		<div data-role="footer" data-position="fixed">
-			<a href="#page2" data-role="button">返回</a>
-		</div>
-	</div>
-</body>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
+    <meta charset="gb2312">
+    <title>
+      Queue
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" type="text/css">
+    <link rel="stylesheet" href="Queue.css" type="text/css">
+    <script src="jquery-1.11.1.min.js" type="text/javascript">
+</script>
+    <script src="jquery.mobile-1.3.2.min.js" type="text/javascript">
+</script>
+    <script src="Queue.js" type="text/javascript">
+</script>
+    <style type="text/css">
+            .ui-block-a, .ui-block-b                
+                {
+                        height: 60px;
+                        padding: 20px;
+                        font-weight: bold;
+                        text-align: center;
+                }
+                
+                .ui-block-a
+                {
+                        border-right: 1px solid black;
+                }
+                
+                .ui-block-b
+                {
+                        border-left: 1px solid black;
+                }
+    </style>
+    <script>      
+      
+      
+      function visitCount()
+      {
+        if(localStorage.visitCount==undefined) localStorage.visitCount=0;
+        else localStorage.visitCount++;
+      }
+      
+      function seeVisitCount()
+      {
+        if(document.getElementById("userName").value=="visit count")
+        {
+          document.getElementById("visitCountDisplay").innerHTML="Be visited for " + localStorage.visitCount + " times.";
+        }
+      }      
+    </script>
+  </head>
+  <body onload="visitCount()">
+    <div data-role="page" id="page1">
+      <div data-role="content">
+        <div id="appNameField" align="center">
+          <p class="appName" style=
+          "font-size: 30px; margin-top: 10px; margin-bottom: 0;">
+            不用再等待
+          </p>
+        </div>
+        <div id="loginField" align="center">
+          <form method="get" action="#">
+            <div data-role="fieldcontain" style="margin: 0;">
+              <table>
+                <tr style="height: 60px;">
+                  <td>
+                    <label for="userName" class="ui-input-text" style=
+                    "width: 3em;">帐号:</label>
+                  </td>
+                  <td>
+                    <input type="text" name="userName" id="userName">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="userPassword" class="ui-input-text" style=
+                    "width: 3em;">密码:</label>
+                  </td>
+                  <td>
+                    <input type="text" name="userPassword" id="userPassword">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form><a data-role="button" href="#page2" id="loginButton"
+          data-inline="true" onclick="seeVisitCount()">登陆</a> <a data-role="button" href="#" id=
+          "exitButton" data-inline="true">退出</a>
+        </div>
+        <div id="logoField" align="center">
+          <img src=
+          "http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif"
+          alt="Logo">
+        </div>
+      </div>
+    </div>
+    <div data-role="page" id="page2">
+      <div data-role="header" data-position="fixed">
+        <a href="#page1" data-role="button"><img src=
+        "http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif"
+        alt="Logo" width="30px" height="30px"></a>
+        <h1>
+          姓名: 罗俊炜
+        </h1><a href="#page1" data-role="button">注销</a>
+      </div>
+      <div data-role="content">
+        <div class="ui-grid-a">
+          <div class="ui-block-a" style="background-color: lightgray;">
+            挂号科室
+          </div>
+          <div class="ui-block-b" style="background-color: lightgray;">
+            等待人数
+          </div>
+          <div class="ui-block-a">
+            耳鼻喉科
+          </div>
+          <div class="ui-block-b">
+            17人 <a href="#page3" style="float: right;">详情</a>
+          </div>
+          <div class="ui-block-a" style="background-color: #EEEEEE;">
+            妇科
+          </div>
+          <div class="ui-block-b" style="background-color: #EEEEEE;">
+            23人 <a href="#page4" style="float: right;">详情</a>
+          </div>
+          <div class="ui-block-a"></div>
+          <div class="ui-block-b"></div>
+          <div class="ui-block-a" style="background-color: #EEEEEE;"></div>
+          <div class="ui-block-b" style="background-color: #EEEEEE;"></div>
+          <div class="ui-block-a"></div>
+          <div class="ui-block-b"></div>
+        </div>
+        <p id="visitCountDisplay"></p>
+      </div>
+    </div>
+    <div data-role="page" id="page3">
+      <div data-role="header" data-position="fixed">
+        <a href="#page1" data-role="button"><img src=
+        "http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif"
+        alt="Logo" width="30px" height="30px"></a>
+        <h1>
+          姓名: 罗俊炜
+        </h1><a href="#page1" data-role="button">注销</a>
+      </div>
+      <div data-role="content">
+        <div class="departmentName" align="center">
+          <h1 style=
+          "border: 2px solid black; border-radius: 20px; padding: 5px; display: inline-block;">
+          耳鼻喉科
+          </h1>
+        </div>
+        <div class="ui-grid-a">
+          <div class="ui-block-a" style="background-color: lightgray;">
+            诊室
+          </div>
+          <div class="ui-block-b" style="background-color: lightgray;">
+            2号
+          </div>
+          <div class="ui-block-a">
+            就诊医师
+          </div>
+          <div class="ui-block-b">
+            王医生
+          </div>
+          <div class="ui-block-a" style="background-color: #EEEEEE;">
+            您的诊号
+          </div>
+          <div class="ui-block-b" style="background-color: #EEEEEE;">
+            19
+          </div>
+          <div class="ui-block-a">
+            正在就诊
+          </div>
+          <div class="ui-block-b">
+            2
+          </div>
+        </div>
+        <div class="peopleInFront" align="center">
+          <p style="font-size: 1.5em; font-weight: bold;">
+            您前面还有17人
+          </p>
+        </div>
+        <div align="center">
+          <img src=
+          "http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif"
+          alt="Logo">
+        </div>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <a href="#page2" data-role="button">返回</a>
+      </div>
+    </div>
+    <div data-role="page" id="page4">
+      <div data-role="header" data-position="fixed">
+        <a href="#page1" data-role="button"><img src=
+        "http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif"
+        alt="Logo" width="30px" height="30px"></a>
+        <h1>
+          姓名: 罗俊炜
+        </h1><a href="#page1" data-role="button">注销</a>
+      </div>
+      <div data-role="content">
+        <div class="departmentName" align="center">
+          <h1 style=
+          "border: 2px solid black; border-radius: 20px; padding: 5px; display: inline-block;">
+          妇科
+          </h1>
+        </div>
+        <div class="ui-grid-a">
+          <div class="ui-block-a" style="background-color: lightgray;">
+            诊室
+          </div>
+          <div class="ui-block-b" style="background-color: lightgray;">
+            6号
+          </div>
+          <div class="ui-block-a">
+            就诊医师
+          </div>
+          <div class="ui-block-b">
+            李医生
+          </div>
+          <div class="ui-block-a" style="background-color: #EEEEEE;">
+            您的诊号
+          </div>
+          <div class="ui-block-b" style="background-color: #EEEEEE;">
+            35
+          </div>
+          <div class="ui-block-a">
+            正在就诊
+          </div>
+          <div class="ui-block-b">
+            12
+          </div>
+        </div>
+        <div class="peopleInFront" align="center">
+          <p style="font-size: 1.5em; font-weight: bold;">
+            您前面还有23人
+          </p>
+        </div>
+        <div align="center">
+          <img src=
+          "http://logo.logozhizuowang.com/uploads/allimg/090201/121P46228-9.gif"
+          alt="Logo">
+        </div>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <a href="#page2" data-role="button">返回</a>
+      </div>
+    </div>
+  </body>
 </html>
